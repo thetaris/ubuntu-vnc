@@ -36,6 +36,9 @@ WORKDIR $INST_SCRIPTS
 
 ADD /src .
 RUN ./install/common.sh
+RUN ./install/tools.sh
+RUN ./install/tigervnc.sh
+RUN ./install/xfce_ui.sh
 RUN ./install/image-kiosk.sh
 RUN ./install/firefox.sh
 
@@ -44,6 +47,9 @@ COPY /src/startup/start_firefox.sh /dockerstartup/start_browser.sh
 
 ### Setup user
 RUN useradd -u 1000 -m -s /bin/bash -G sudo testup
+
+ADD src/install/set_user_permission.sh .
+RUN ./set_user_permission.sh -xxx
 
 WORKDIR /home/testup
 USER 1000

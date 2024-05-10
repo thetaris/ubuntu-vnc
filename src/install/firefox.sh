@@ -2,6 +2,10 @@
 set -ex
 
 echo "Install Firefox"
+apt-get update && apt-get install -y \
+	apt-transport-https \
+	ca-certificates \
+	--no-install-recommends
 
 #copy from org/sakuli/common/bin/installer_scripts/linux/install_firefox_portable.sh
 function instFF() {
@@ -22,7 +26,9 @@ function instFF() {
               cat <<EOF > /etc/firefox/policies/policies.json
 {
   "policies": {
-    "DisableAppUpdate": true
+    "DisableAppUpdate": true,
+    "OverrideFirstRunPage": "",
+    "OverridePostUpdatePage": ""
   }
 }
 EOF
@@ -31,7 +37,7 @@ EOF
 
             echo "Install Geckodriver"
 
-            curl -L https://github.com/mozilla/geckodriver/releases/download/v0.32.0/geckodriver-v0.32.0-linux64.tar.gz -o /tmp/geckodriver.tgz
+            curl -L https://github.com/mozilla/geckodriver/releases/download/v0.34.0/geckodriver-v0.34.0-linux64.tar.gz -o /tmp/geckodriver.tgz
             tar zxvf /tmp/geckodriver.tgz -C /tmp
             mv /tmp/geckodriver /usr/bin/geckodriver
             rm /tmp/geckodriver.tgz
@@ -43,5 +49,5 @@ EOF
     exit -1
 }
 
-instFF '93.0' '/usr/lib/firefox' 'true'
+instFF '125.0.1' '/usr/lib/firefox' 'true'
 

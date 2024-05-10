@@ -44,7 +44,6 @@ RUN ./install/chrome.sh
 
 
 COPY /src/scripts /dockerstartup
-COPY /src/startup/start_firefox.sh /dockerstartup/start_browser.sh
 COPY /src/startup/start_chrome.sh /dockerstartup/start_browser.sh
 
 ### Setup user
