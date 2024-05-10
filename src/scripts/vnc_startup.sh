@@ -112,6 +112,8 @@ chmod 600 $PASSWD_PATH
 
 source /dockerstartup/vnc_resize_call.sh 1024x768
 
+## set Chrome as default browser
+xdg-settings set default-web-browser google-chrome.desktop
 
 if [ -z "$1" ] || [[ $1 =~ -w|--wait ]]; then
     wait $PID_SUB
