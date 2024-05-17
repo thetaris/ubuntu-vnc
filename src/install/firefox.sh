@@ -28,7 +28,18 @@ function instFF() {
   "policies": {
     "DisableAppUpdate": true,
     "OverrideFirstRunPage": "",
-    "OverridePostUpdatePage": ""
+    "OverridePostUpdatePage": "",
+    "BookmarksToolbar": false,
+    "Bookmarks": {
+      "Locked": true,
+      "ManageBookmarks": false
+    },
+    "DisableBookmarkPrompt": true,
+    "DisableBookmarks": true,
+    "DisplayBookmarksToolbar": "never",
+    "DisableFirefoxAccounts": true,
+    "DisableProfileImport": true,
+    "NoDefaultBookmarks": true
   }
 }
 EOF
@@ -49,5 +60,5 @@ EOF
     exit -1
 }
 
-instFF '125.0.1' '/usr/lib/firefox' 'true'
+instFF '126.0' '/usr/lib/firefox' 'true'
 
