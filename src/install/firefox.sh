@@ -39,7 +39,37 @@ function instFF() {
     "DisplayBookmarksToolbar": "never",
     "DisableFirefoxAccounts": true,
     "DisableProfileImport": true,
-    "NoDefaultBookmarks": true
+
+    "DontCheckDefaultBrowser": true,
+    "ExtensionSettings": {
+        "*": {
+          "blocked_install_message": "Blocked!",
+          "installation_mode": "blocked"
+        }
+    },
+    "FirefoxHome": {
+        "TopSites": false,
+        "SponsoredTopSites": false,
+        "Highlights": false,
+        "Pocket": false,
+        "SponsoredPocket": false,
+        "Snippets": false,
+        "Locked": true
+    },
+    "FirefoxSuggest": {
+        "SponsoredSuggestions": false,
+        "ImproveSuggest": false,
+        "Locked": true
+    },
+    "UserMessaging": {
+      "WhatsNew": false,
+      "ExtensionRecommendations": false,
+      "FeatureRecommendations": false,
+      "UrlbarInterventions": false,
+      "SkipOnboarding": true,
+      "MoreFromMozilla": false,
+      "Locked": true
+    }
   }
 }
 EOF
@@ -60,5 +90,5 @@ EOF
     exit -1
 }
 
-instFF '126.0' '/usr/lib/firefox' 'true'
+instFF '127.0' '/usr/lib/firefox' 'true'
 
