@@ -115,6 +115,25 @@ source /dockerstartup/vnc_resize_call.sh 1024x768
 ## set Chrome as default browser
 xdg-settings set default-web-browser google-chrome.desktop
 
+# Path to the helpers.rc file
+HELPERS_RC_PATH="$HOME/.config/xfce4/helpers.rc"
+
+# Check if the file exists
+if [ ! -f "$HELPERS_RC_PATH" ]; then
+    echo "File does not exist: $HELPERS_RC_PATH"
+
+    # Create the directory if it doesn't exist
+    mkdir -p "$(dirname "$HELPERS_RC_PATH")"
+
+    # Create the file with the required content
+    echo "WebBrowser=google-chrome" > "$HELPERS_RC_PATH"
+
+    echo "Created new file with content:"
+    echo "WebBrowser=google-chrome"
+else
+    echo "File already exists: $HELPERS_RC_PATH"
+fi
+
 if [ -z "$1" ] || [[ $1 =~ -w|--wait ]]; then
     wait $PID_SUB
 else
