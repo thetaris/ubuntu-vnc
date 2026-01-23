@@ -36,6 +36,11 @@ ENV START_BROWSER=true
 WORKDIR $INST_SCRIPTS
 
 ADD /src .
+
+# Edge driver must be pre-downloaded to src/drivers/edgedriver_linux64.zip
+# Download from: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
+COPY /src/drivers/edgedriver_linux64.zip /tmp/edgedriver_linux64.zip
+
 RUN ./install/common.sh
 RUN ./install/tools.sh
 RUN ./install/tigervnc.sh

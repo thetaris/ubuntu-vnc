@@ -20,11 +20,9 @@ echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft-edge.gpg] https://
 # Install Edge
 apt-get update && apt-get install -y microsoft-edge-stable
 
-# Install msedgedriver
-EDGE_VERSION=$(microsoft-edge --version | awk '{print $3}')
-curl -L "https://msedgedriver.azureedge.net/${EDGE_VERSION}/edgedriver_linux64.zip" -o /tmp/edgedriver.zip
-unzip /tmp/edgedriver.zip -d /tmp
-rm /tmp/edgedriver.zip
+# Install msedgedriver (pre-downloaded and copied to /tmp/edgedriver_linux64.zip)
+unzip /tmp/edgedriver_linux64.zip -d /tmp
+rm /tmp/edgedriver_linux64.zip
 mv /tmp/msedgedriver /usr/bin/msedgedriver
 chmod +x /usr/bin/msedgedriver
 
