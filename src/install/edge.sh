@@ -28,11 +28,23 @@ rm /tmp/edgedriver.zip
 mv /tmp/msedgedriver /usr/bin/msedgedriver
 chmod +x /usr/bin/msedgedriver
 
-# Create Edge policy to disable automation infobar
+# Create Edge policies
 mkdir -p /etc/opt/edge/policies/managed
-cat > /etc/opt/edge/policies/managed/disable_automation_infobar.json << 'EOF'
+cat > /etc/opt/edge/policies/managed/edge_policies.json << 'EOF'
 {
-    "CommandLineFlagSecurityWarningsEnabled": false
+    "CommandLineFlagSecurityWarningsEnabled": false,
+    "HubsSidebarEnabled": false,
+    "EdgeSidebarEnabled": false,
+    "SearchSuggestEnabled": false,
+    "BrowserSignin": 0,
+    "SyncDisabled": true,
+    "EdgeCollectionsEnabled": false,
+    "EdgeShoppingAssistantEnabled": false,
+    "PersonalizationReportingEnabled": false,
+    "EdgeDiscoverEnabled": false,
+    "ShowMicrosoftRewards": false,
+    "SpotlightExperiencesAndRecommendationsEnabled": false,
+    "WebWidgetAllowed": false
 }
 EOF
 
