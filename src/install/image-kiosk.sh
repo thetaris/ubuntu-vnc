@@ -5,7 +5,7 @@ echo "Hello world"
 apt-get update
 
 echo "*** Install tools-minimal"
-sh -c $INST_SCRIPTS/install/tools_minimal.sh
+sh -c $INST_SCRIPTS/install/tools-minimal.sh
 
 echo "*** Install XOrg minimal"
 sh -c $INST_SCRIPTS/install/xorg_minimal.sh
