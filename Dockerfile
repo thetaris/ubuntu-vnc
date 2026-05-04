@@ -54,7 +54,7 @@ RUN $INST_SCRIPTS/chrome.sh
 
 ### Setup user
 RUN useradd -u 1000 -m -s /bin/bash -G sudo testup
-ADD ./src/xfce/ /home/testup
+ADD --chown=testup:testup ./src/xfce/ /home/testup
 
 ADD src/install/set_user_permission.sh .
 RUN ./set_user_permission.sh -xxx
