@@ -1,5 +1,5 @@
 # This Dockerfile is used to build an headles vnc image based on Ubuntu
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 
 LABEL io.k8s.description="Headless VNC Container with Xfce window manager, firefox and chromium" \
       io.k8s.display-name="Headless VNC Container based on Ubuntu" \
