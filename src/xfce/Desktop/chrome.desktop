@@ -3,7 +3,7 @@ Version=1.0
 Name=Google Chrome
 GenericName=Web Browser
 Comment=Access the Internet
-Exec=google-chrome --start-maximized --simulate-outdated-no-au='Tue, 31 Dec 2099 23:59:59 GMT' %U
+Exec=google-chrome --start-maximized --simulate-outdated-no-au='Tue, 31 Dec 2099 23:59:59 GMT' --no-first-run --no-default-browser-check --disable-sync --disable-features=SignInPromo --disable-dev-shm-usage --disable-gpu --disable-software-rasterizer %U
 Terminal=false
 X-MultipleArgs=false
 Type=Application
